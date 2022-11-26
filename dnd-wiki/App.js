@@ -11,7 +11,7 @@ import OBScreen03 from './screens/onboarding/OBScreen03';
 // Importing Main Navigational Screens
 import HomeScreen from './screens/HomeScreen';
 import MonsterListScreen from './screens/MonsterListScreen';
-import MonsterDetailScreen from './screens/MonsterDetailScreen'; // Stack Screen (can't be selected from the menu, only when clicking on a list item)
+// import MonsterDetailScreen from './screens/MonsterDetailScreen'; // Stack Screen (can't be selected from the menu, only when clicking on a list item)
 import CreateMonsterScreen from './screens/CreateMonsterScreen';
 
 // Navigation Constant variables
@@ -19,58 +19,50 @@ const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 // Onboarding Screens + Detail Screen
-export default function Start() {
-  <Stack.Navigator>
-    <Stack.Screen 
-      name="OBS01"
-      component={OBScreen01}
-      options={{ title: 'Getting Started'}}
-    />
-    
-    <Stack.Screen 
-      name="OBS02"
-      component={OBScreen02}
-      options={{ title: 'Getting Started'}}
+export default function tabNavigation() {
+  <Tab.Navigator>
+    <Tab.Screen 
+      name="Home"
+      component={HomeScreen}
+      options={{ title: 'Home'}}
     />
 
-    <Stack.Screen 
-      name="OBS03"
-      component={OBScreen03}
-      options={{ title: 'Getting Started' }}
+    <Tab.Screen 
+      name="MonsterList"
+      component={MonsterListScreen}
+      options={{ title: 'List of Monsters'}}
     />
 
-    <Stack.Screen 
-          name="MonsterDetails"
-          component={MonsterDetailScreen}
-          options={{ title: 'Monster Details'}}
-        />
-  </Stack.Navigator>
+    <Tab.Screen 
+      name="CreateMonster"
+      component={CreateMonsterScreen}
+      options={{ title: 'Create A Monster'}}
+    />
+  </Tab.Navigator>
 }
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-
-        <Tab.Screen 
-          name="Home"
-          component={HomeScreen}
-          options={{ title: 'Home'}}
+      <Stack.Navigator>
+        <Stack.Screen 
+          name="OBS01"
+          component={OBScreen01}
+          options={{ title: 'Getting Started'}}
+        />
+        
+        <Stack.Screen 
+          name="OBS02"
+          component={OBScreen02}
+          options={{ title: 'Getting Started'}}
         />
 
-        <Tab.Screen 
-          name="MonsterList"
-          component={MonsterListScreen}
-          options={{ title: 'List of Monsters'}}
+        <Stack.Screen 
+          name="OBS03"
+          component={OBScreen03}
+          options={{ title: 'Getting Started' }}
         />
-
-        <Tab.Screen 
-          name="CreateMonster"
-          component={CreateMonsterScreen}
-          options={{ title: 'Create A Monster'}}
-        />
-
-      </Tab.Navigator>
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
