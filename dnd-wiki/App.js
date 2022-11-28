@@ -1,7 +1,29 @@
 import * as React from 'react';
+
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+// NAVIGATION
 import { NavigationContainer } from '@react-navigation/native'; 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+// THEME
+import { ThemeProvider } from '@rneui/themed';
+import { monstersTheme } from './themes/monstersTheme';
+
+// FONT AWESOME ICONS
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+// import { library } from '@fortawesome/fontawesome-svg-core';
+import { faHouse, faDragon, faSquarePlus  } from '@fortawesome/free-solid-svg-icons';
+
+// Expo Google Fonts
+import { useFonts } from 'expo-font';
+
+// POPPINS
+import { Poppins_100Thin, Poppins_200ExtraLight, Poppins_300Light, Poppins_400Regular, Poppins_500Medium, Poppins_600SemiBold, Poppins_700Bold, Poppins_800ExtraBold, Poppins_900Black } from '@expo-google-fonts/poppins';
+
+// ROBOTO CONDENSED
+import { RobotoCondensed_700Bold } from '@expo-google-fonts/roboto-condensed'
 
 // Importing Onboarding screens
 import OBScreen01 from './screens/onboarding/OBScreen01';
@@ -19,50 +41,53 @@ const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 // Onboarding Screens + Detail Screen
-export default function tabNavigation() {
-  <Tab.Navigator>
-    <Tab.Screen 
-      name="Home"
-      component={HomeScreen}
-      options={{ title: 'Home'}}
+export default function getStarted() {
+  <Stack.Navigator>
+    <Stack.Screen 
+      name="OBS01"
+      component={OBScreen01}
+      options={{ title: 'Getting Started'}}
+    />
+    
+    <Stack.Screen 
+      name="OBS02"
+      component={OBScreen02}
+      options={{ title: 'Getting Started'}}
     />
 
-    <Tab.Screen 
-      name="MonsterList"
-      component={MonsterListScreen}
-      options={{ title: 'List of Monsters'}}
+    <Stack.Screen 
+      name="OBS03"
+      component={OBScreen03}
+      options={{ title: 'Getting Started' }}
     />
-
-    <Tab.Screen 
-      name="CreateMonster"
-      component={CreateMonsterScreen}
-      options={{ title: 'Create A Monster'}}
-    />
-  </Tab.Navigator>
+  </Stack.Navigator>
 }
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen 
-          name="OBS01"
-          component={OBScreen01}
-          options={{ title: 'Getting Started'}}
-        />
-        
-        <Stack.Screen 
-          name="OBS02"
-          component={OBScreen02}
-          options={{ title: 'Getting Started'}}
+      <Tab.Navigator>
+        <Tab.Screen 
+          name="Home"
+          FontAwesomeIcon={faHouse}
+          component={HomeScreen}
+          options={{ title: 'Home'}}
         />
 
-        <Stack.Screen 
-          name="OBS03"
-          component={OBScreen03}
-          options={{ title: 'Getting Started' }}
+        <Tab.Screen 
+          name="MonsterList"
+          FontAwesomeIcon={faDragon}
+          component={MonsterListScreen}
+          options={{ title: 'List of Monsters'}}
         />
-      </Stack.Navigator>
+
+        <Tab.Screen 
+          name="CreateMonster"
+          FontAwesomeIcon={faSquarePlus}
+          component={CreateMonsterScreen}
+          options={{ title: 'Create A Monster'}}
+        />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
