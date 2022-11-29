@@ -5,8 +5,18 @@ export default function OBScreen01({ navigation }) {
     return(
         // logo first
         <View>
-
-            <Text>Lorem ipsum dolor sit amet consectetur, Semper rhoncus juston ut a egaet. Id urna sit in tellus at auctor lorem. Mauris lectus consectetur feugiat maruis.</Text>
+            <Image 
+                style={styles.logo}
+                source={require('../assets/imgs/Logo.png')}
+            />
+            <Image 
+                style={styles.obImage}
+                source={require('../assets/imgs/splash-1.png')}
+            />
+            <Text style={styles.splash}>
+                <Text>Welcome!</Text>
+                <Text>Dungeons & Dragons Wiki is an index compiling all monsters from the Dungeons & Dragons universe.</Text>
+            </Text>
 
             <View>
                 <Button 
