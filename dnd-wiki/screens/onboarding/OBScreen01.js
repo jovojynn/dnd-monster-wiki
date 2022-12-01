@@ -4,28 +4,51 @@ import { Button, Text } from '@rneui/themed';
 export default function OBScreen01({ navigation }) {
     return(
         // logo first
-        <View>
+        <View style={styles.container}>
             <Image 
                 style={styles.logo}
-                source={require('../assets/imgs/Logo.png')}
+                source={require('../../assets/imgs/Logo.png')}
             />
             <Image 
                 style={styles.obImage}
-                source={require('../assets/imgs/splash-1.png')}
+                source={require('../../assets/imgs/splash-1.png')}
             />
-            <Text style={styles.splash}>
-                <Text>Welcome!</Text>
-                <Text>Dungeons & Dragons Wiki is an index compiling all monsters from the Dungeons & Dragons universe.</Text>
+            <Text style={styles.obText}>
+                <Text h3>WELCOME!</Text>
+                {'\n'}
+                <Text style>Dungeons & Dragons Wiki is an index compiling all monsters from the Dungeons & Dragons universe.</Text>
             </Text>
 
-            <View>
+            <View style={styles.btn1}>
                 <Button 
-                    title="NEXT"
+                    title="Next"
+                    buttonStyle={{
+                        backgroundColor: '#28282B'
+                    }}
+                    containerStyle={{
+                        marginHorizontal: 50,
+                        height: 50,
+                        width: 300,
+                        marginVertical: 0,
+                    }}
                     onPress={() => navigation.navigate('OBS02')}
                 />
-
                 <Button 
-                    title="SKIP"
+                    type="outline"
+                    title="Skip"
+                    titleStyle={{
+                        color: '#000'
+                    }}
+                    buttonStyle={{
+                        borderColor: '#28282B',
+                        borderWidth: 2
+                    }}
+                    containerStyle={{
+                        marginHorizontal: 50,
+                        height: 50,
+                        width: 300,
+                        marginVertical: 0,
+                    }}
                     onPress={() => navigation.navigate('Home')}
                 />
             </View>
@@ -35,20 +58,36 @@ export default function OBScreen01({ navigation }) {
 }
 
 
-const obstyles = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: '#E7E7DB'
     },
 
     logo: {
+        position: 'absolute',
+        top: 60
 
     },
 
     obImage: {
-
+        marginBottom: 40 ,
+        marginTop: 150,
+        width: 260,
+        height: 260
     },
 
-
+    obText: {
+        textAlign: 'center',
+        fontSize: 18,
+        paddingRight: 30,
+        paddingLeft: 30,
+        lineHeight: 25,
+        marginBottom: 75
+    },
+    btn1: {
+        marginTop: 30
+    }
 });

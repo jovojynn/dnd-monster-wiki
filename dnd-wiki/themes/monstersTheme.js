@@ -6,8 +6,8 @@ const themePalette = {
     primaryLight: '#E7E7DB',
     maroon: '#9E0B0F',
     blue: '#5EA2C1',
-    white: '#fff',
-    black: '#000'
+    white: '#ffffff',
+    black: '#000000'
 }
 
 // components > [ComponentType] > [ComponentStyle]
@@ -25,21 +25,34 @@ export const monstersTheme = createTheme({
         Text: {
             h1Style: {
                 color: '#F7F2D6',
-                fontFamily: 'Poppins_800ExtraBold',
-                fontWeight: '800',
+                fontFamily: 'Poppins_900Black',
                 fontSize: 26
                 
             },
             h2Style: {
                 color: themePalette.white,
                 fontFamily: 'RobotoCondensed_700Bold',
-                fontSize: 18
+                fontSize: 24
+            },
+
+            h3Style: {
+                color: themePalette.black,
+                fontFamily: 'RobotoCondensed_700Bold',
+                fontSize: 20
             },
             style: {
-                color: themePalette.white,
+                color: themePalette.black,
                 fontFamily: 'Poppins_400Regular',
-                fontSize: 12
-
+                fontSize: 18
+            }
+        },
+        Card: {
+            containerStyle: {
+                backgroundColor: themePalette.primary
+            },
+            wrapperStyle: {
+                width: 300,
+                height: 350
             }
         }
     }
