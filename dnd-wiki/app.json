@@ -4,12 +4,12 @@
     "slug": "dnd-wiki",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/dnd-logo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/android-splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#28282B"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -18,12 +18,14 @@
       "**/*"
     ],
     "ios": {
+      "icon": "./assets/dnd-logo.png",
       "supportsTablet": true
     },
     "android": {
+      "icon": "./assets/dnd-logo.png",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./assets/dnd-nameonly.png",
+        "backgroundColor": "#28282B"
       }
     },
     "web": {
